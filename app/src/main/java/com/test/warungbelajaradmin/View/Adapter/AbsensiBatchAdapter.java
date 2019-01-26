@@ -53,7 +53,7 @@ public class AbsensiBatchAdapter extends RecyclerView.Adapter<AbsensiBatchAdapte
                 AbsensiNobel fragment = new AbsensiNobel();
                 fragment.setArguments(sendedData);
 
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment_absensi_nobel, fragment, "absensi_nobel").commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_absensi_batch, fragment, "absensi_nobel").commit();
             }
         });
     }

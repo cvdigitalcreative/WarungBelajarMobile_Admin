@@ -3,6 +3,7 @@ package com.test.warungbelajaradmin.View.Adapter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.test.warungbelajaradmin.R;
 import com.test.warungbelajaradmin.View.Fragment.BuatGrupJadwal;
+import com.test.warungbelajaradmin.View.Fragment.BuatGrupKursus;
 
 import java.util.ArrayList;
 
@@ -71,7 +73,7 @@ public class BuatGrupKursusAdapter extends RecyclerView.Adapter<BuatGrupKursusAd
                 BuatGrupJadwal fragment = new BuatGrupJadwal();
                 fragment.setArguments(sendedData);
 
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment_buat_grup, fragment, "buat_grup_jadwal").commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment_kursus, fragment).commit();
             }
         });
     }

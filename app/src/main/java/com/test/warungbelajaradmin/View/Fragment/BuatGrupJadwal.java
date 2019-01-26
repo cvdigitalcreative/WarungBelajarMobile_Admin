@@ -66,11 +66,11 @@ public class BuatGrupJadwal extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_buat_grup_jadwal, container, false);
 
-        init(view);
-        receivedData();
-        init_sesi_jadwal();
-        do_cari(view);
-        do_simpan();
+//        init(view);
+//        receivedData();
+//        init_sesi_jadwal();
+//        do_cari(view);
+//        do_simpan();
 
         return view;
     }

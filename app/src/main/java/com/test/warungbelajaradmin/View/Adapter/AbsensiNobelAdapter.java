@@ -52,7 +52,7 @@ public class AbsensiNobelAdapter extends RecyclerView.Adapter<AbsensiNobelAdapte
                 AbsensiKehadiran fragment = new AbsensiKehadiran();
                 fragment.setArguments(sendedData);
 
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment_absensi_nobel, fragment, "absensi_kehadiran").commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_absensi_nobel, fragment, "absensi_kehadiran").commit();
             }
         });
     }

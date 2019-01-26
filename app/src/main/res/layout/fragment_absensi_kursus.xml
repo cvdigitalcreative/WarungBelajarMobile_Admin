@@ -6,14 +6,64 @@
     android:orientation="vertical"
     tools:context=".View.Fragment.AbsensiKursus">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Kursus"
-        android:textSize="25sp"
-        android:textColor="#FFC9BF01"
-        android:gravity="center"/>
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/ic_action_absensi" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1.6"
+                    android:gravity="center"
+                    android:text="KURSUS"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="0.2"
+                    android:gravity="right"
+                    android:src="@drawable/ic_action_group" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_absensi_kursus"

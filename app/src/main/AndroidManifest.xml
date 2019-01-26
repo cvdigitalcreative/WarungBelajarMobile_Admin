@@ -9,17 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Activity.Login">
+        <activity android:name=".View.Activity.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.Activity.MenuUtama" />
-        <activity android:name=".View.Activity.BaseKonfirmasiPembayaran" />
-        <activity android:name=".View.Activity.BaseBuatGrupKursus" />
-        <activity android:name=".View.Activity.BaseAbsensiNobel"></activity>
+        <!-- <activity android:name=".View.Activity.MenuUtama" /> -->
+        <!--<activity android:name=".BaseActivity"></activity>-->
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
 
                 if(user != null){
-                    Intent intent = new Intent(Login.this, MenuUtama.class);
+                    Intent intent = new Intent(Login.this, BaseActivity.class);
                     intent.putExtra("id_user", user.getUid());
                     startActivity(intent);
                 }
@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
 
                                     FirebaseUser user = mAuth.getCurrentUser();
 
-                                    Intent intent = new Intent(Login.this, MenuUtama.class);
+                                    Intent intent = new Intent(Login.this, BaseActivity.class);
                                     intent.putExtra("id_user", user.getUid());
                                     startActivity(intent);
                                 }

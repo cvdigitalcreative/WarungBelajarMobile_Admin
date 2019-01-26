@@ -1,7 +1,9 @@
 package com.test.warungbelajaradmin.View.Fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,11 +24,39 @@ import java.util.ArrayList;
 public class AbsensiKursus extends Fragment {
     private RecyclerView rv_absensi_kursus;
     private ArrayList<String> kursus_list;
+    public static final String ARG_PAGE = "ARG_PAGE";
+    private int mPageNo;
 
     public AbsensiKursus() {
         // Required empty public constructor
     }
 
+    public static AbsensiKursus newInstance(int pageNo) {
+        // Required empty public constructor
+        Bundle args = new Bundle();
+        args.putInt(ARG_PAGE, pageNo);
+        AbsensiKursus fragment = new AbsensiKursus();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPageNo = getArguments().getInt(ARG_PAGE);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,8 +1,10 @@
 package com.test.warungbelajaradmin.View.Fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,11 +31,27 @@ public class KonfirmasiPembayaran extends Fragment {
     private RecyclerView rv_konfirmasi_pembayaran;
     private DatabaseReference ref;
     private ArrayList<Nobel> nobel_list;
+    public static final String ARG_PAGE = "ARG_PAGE";
+    private int mPageNo;
 
-    public KonfirmasiPembayaran() {
-        // Required empty public constructor
+    public KonfirmasiPembayaran(){
+
     }
 
+    public static KonfirmasiPembayaran newInstance(int pageNo) {
+        // Required empty public constructor
+        Bundle args = new Bundle();
+        args.putInt(ARG_PAGE, pageNo);
+        KonfirmasiPembayaran fragment = new KonfirmasiPembayaran();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPageNo = getArguments().getInt(ARG_PAGE);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -101,6 +119,18 @@ public class KonfirmasiPembayaran extends Fragment {
         rv_konfirmasi_pembayaran.setLayoutManager(MyLinearLayoutManager);
 
         ref = FirebaseDatabase.getInstance().getReference();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
     }
 
 }

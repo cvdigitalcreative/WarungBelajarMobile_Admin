@@ -1,7 +1,9 @@
 package com.test.warungbelajaradmin.View.Fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,9 +22,26 @@ import java.util.ArrayList;
 public class BuatGrupKursus extends Fragment {
     private ArrayList<String> kursus_list;
     private RecyclerView rv_buat_grup_kursus;
+    public static final String ARG_PAGE = "ARG_PAGE";
+    private int mPageNo;
 
     public BuatGrupKursus() {
         // Required empty public constructor
+    }
+
+//    public static BuatGrupKursus newInstance(int pageNo) {
+//        // Required empty public constructor
+//        Bundle args = new Bundle();
+//        args.putInt(ARG_PAGE, pageNo);
+//        BuatGrupKursus fragment = new BuatGrupKursus();
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        mPageNo = getArguments().getInt(ARG_PAGE);
     }
 
 
@@ -55,6 +74,10 @@ public class BuatGrupKursus extends Fragment {
         rv_buat_grup_kursus.setHasFixedSize(true);
         LinearLayoutManager MyLinearLayoutManager = new LinearLayoutManager(getActivity());
         rv_buat_grup_kursus.setLayoutManager(MyLinearLayoutManager);
+    }
+
+    public void moveToGrupJadwal(BuatGrupJadwal fragment){
+        getFragmentManager().beginTransaction().replace(R.id.container_fragment_kursus, fragment, "buat_grup_jadwal").commit();
     }
 
 }
